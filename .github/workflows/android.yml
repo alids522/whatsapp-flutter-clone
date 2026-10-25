@@ -27,20 +27,6 @@ jobs:
           channel: stable
           cache: true
 
-      - name: Restore Gradle wrapper jar
-        # The binary gradle-wrapper.jar cannot be pushed via the GitHub
-        # API text endpoint without corruption, so regenerate it in CI
-        # with the official `gradle wrapper` task (Gradle docs).
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: "9.3.1"
-
-      - name: Generate wrapper files
-        run: |
-          cd android
-          gradle wrapper --gradle-version 9.3.1 --distribution-type all
-          ls -lh gradle/wrapper/
-
       - name: Flutter pub get
         run: flutter pub get
 
