@@ -1,0 +1,21 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+build/
+.pub-cache/
+.pub/
+*.log
+
+# Android
+android/.gradle/
+android/local.properties
+*.keystore
+*.jks
+
+# iOS (not used in v1, kept out of the APK build)
+/ios/
+
+# Misc
+.DS_Store
+.idea/
+*.iml
